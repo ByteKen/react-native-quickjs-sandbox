@@ -1,0 +1,70 @@
+{
+  "name": "react-native-quickjs-sandbox",
+  "version": "1.0.0",
+  "description": "A high-performance React Native JavaScript sandboxing library using QuickJS and JSI for lightning-fast, synchronous execution.",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "src/index.tsx",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "QuickjsSandbox.podspec",
+    "download-quickjs.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react-native",
+    "quickjs",
+    "sandbox",
+    "jsi",
+    "javascript-engine",
+    "turbo-module",
+    "secure-execution",
+    "synchronous",
+    "isolated-context"
+  ],
+  "author": "ByteKen",
+  "license": "MIT",
+  "homepage": "https://github.com/ByteKen/react-native-quickjs-sandbox#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByteKen/react-native-quickjs-sandbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ByteKen/react-native-quickjs-sandbox/issues"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.71.0"
+  },
+  "devDependencies": {
+    "react": "19.2.3",
+    "react-native": "0.85.3",
+    "typescript": "^5.8.3"
+  },
+  "codegenConfig": {
+    "name": "QuickjsSandboxSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.quickjssandbox"
+    }
+  }
+}
+
