@@ -1,0 +1,21 @@
+# Android intermediate build outputs
+android/build/
+android/.cxx/
+android/.gradle/
+android/local.properties
+android/*.iml
+
+# iOS intermediate build outputs
+ios/build/
+ios/Pods/
+ios/DerivedData/
+ios/*.xcworkspace
+
+# Local IDE configs
+.idea/
+.vscode/
+
+# Configs and local files
+.git/
+.gitignore
+tsconfig.json
