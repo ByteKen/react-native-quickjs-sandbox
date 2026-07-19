@@ -1,6 +1,6 @@
 {
   "name": "react-native-quickjs-sandbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A high-performance React Native JavaScript sandboxing library using QuickJS and JSI for lightning-fast, synchronous execution.",
   "main": "lib/index.js",
   "module": "lib/index.js",
