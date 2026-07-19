@@ -17,7 +17,7 @@ set(QUICKJS_DIR "${REAL_SOURCE_DIR}/../cpp/quickjs")
 
 add_library(quickjs-sandbox-jsi SHARED
         "${CPP_DIR}/quickjs-sandbox-jsi.cpp"
-        "${CPP_DIR}/quickjs-sandbox-jni.cpp"
+        "${REAL_SOURCE_DIR}/quickjs-sandbox-jni.cpp"
         "${QUICKJS_DIR}/quickjs.c"
         "${QUICKJS_DIR}/cutils.c"
         "${QUICKJS_DIR}/dtoa.c"

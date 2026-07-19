@@ -2,17 +2,13 @@
 
 A high-performance React Native JavaScript sandboxing library powered by the QuickJS engine and React Native JSI. Run untrusted scripts synchronously in isolated execution contexts.
 
-> [!WARNING]
-> **Notice: This package has not been fully tested or verified on iOS yet.** 
-> It is currently confirmed and stable on Android. iOS support is present in the build configurations (CMake/Podspec) but is untested on physical devices or simulator setups. Use with caution on iOS.
-
 ---
 
 ## Features
 
 * **Synchronous Execution (JSI)**: Invokes sandbox operations synchronously with no serialization overhead.
 * **Isolated Contexts**: Create multiple independent execution sandboxes with isolated global variables.
-* **Host Callback Support**: Expose native or React Native functions synchronously to sandboxed scripts via a global `__hostCall` helper.
+* **Host Callback Support**: Expose native or React Native functions synchronously to sandboxed scripts via a global `__nativeCall` helper.
 * **Lifecycle Controls**: Clean up native engine memory allocations immediately.
 
 ---
@@ -54,7 +50,7 @@ QuickjsSandbox.registerHostCallback(CONTEXT_ID, (action: string, argsJson: strin
 });
 
 // Run a script calling the host callback
-const script = `__hostCall('log', JSON.stringify({ message: 'Hello from sandbox!' }));`;
+const script = `__nativeCall('log', JSON.stringify({ message: 'Hello from sandbox!' }));`;
 QuickjsSandbox.evalCode(CONTEXT_ID, script, 'interop.js');
 
 // 4. Dispose of context to release memory
@@ -66,7 +62,7 @@ QuickjsSandbox.disposeContext(CONTEXT_ID);
 ## Platform Details
 
 * **Android**: Uses CMake to build and compile the QuickJS C engine directly.
-* **iOS**: CocoaPods build configurations download the QuickJS source files dynamically during `pod install`. *(Untested on live environments)*.
+* **iOS**: CocoaPods build configurations download the QuickJS source files dynamically during `pod install`.
 
 ---
 
